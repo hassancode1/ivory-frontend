@@ -11,7 +11,7 @@ function useAcceptInvite() {
     const id = new URLSearchParams(location.search).get('id');
     const email = new URLSearchParams(location.search).get('email');
 
-  const url = `http://localhost:3000/accept/invite?id=${id}&email=${email}`
+  const url = `https://whale-app-a3hvg.ondigitalocean.app/ivory2/accept/invite?id=${id}&email=${email}`
 
   const [loading, setLoading] = useState(true);
 

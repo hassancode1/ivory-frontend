@@ -4,7 +4,7 @@ import { getLocalAccessToken } from "../utils/constants";
 
 function useCurrentUser() {
     const accessToken = getLocalAccessToken();
-    const url = "http://localhost:3000/current-user"
+    const url = "https://whale-app-a3hvg.ondigitalocean.app/ivory2/current-user"
 
   const [user, setUser] = useState(null);
 

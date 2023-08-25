@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (postData) => {
-    const url = 'http://localhost:3000/login';
+    const url = 'https://whale-app-a3hvg.ondigitalocean.app/ivory2/login';
     try {
       setLoading(true); 
 

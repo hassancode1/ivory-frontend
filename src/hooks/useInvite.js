@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 
 function useInvite() {
-  const url = 'http://localhost:3000/invite'
+  const url = 'https://whale-app-a3hvg.ondigitalocean.app/ivory2/invite'
 
   const [loading, setLoading] = useState(true);
 

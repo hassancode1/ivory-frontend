@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { getLocalAccessToken } from "../utils/constants";
 
 function useWalletDeposit() {
-  const url = "http://localhost:3000/wallet/deposit";
+  const url = "https://whale-app-a3hvg.ondigitalocean.app/ivory2/wallet/deposit";
 
   const accessToken = getLocalAccessToken();
   const [loading, setLoading] = useState(true);

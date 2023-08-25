@@ -4,7 +4,7 @@ import { getLocalAccessToken } from "../utils/constants";
 import getWallet from "./getWallet";
 
 function useTransfer() {
-  const url = "http://localhost:3000/wallet/transfer";
+  const url = "https://whale-app-a3hvg.ondigitalocean.app/ivory2/wallet/transfer";
 
   const accessToken = getLocalAccessToken();
   const [loading, setLoading] = useState(true);

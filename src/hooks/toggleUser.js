@@ -4,7 +4,7 @@ import { getLocalAccessToken } from "../utils/constants";
 import getWallet from "./getWallet";
 
 function toggleUser() {
-  const url = "http://localhost:3000/toggleUser";
+  const url = "https://whale-app-a3hvg.ondigitalocean.app/ivory2/toggleUser";
 
   const accessToken = getLocalAccessToken();
   const [loading, setLoading] = useState(true);
