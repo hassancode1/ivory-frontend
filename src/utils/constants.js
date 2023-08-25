@@ -13,5 +13,5 @@ export const dollarFormatter = (num) => new Intl.NumberFormat('en-US', {
     }
     return null;
   };
-  export const API_URL = "http://localhost:3000"
+  export const API_URL = "https://whale-app-a3hvg.ondigitalocean.app/ivory2"
 
