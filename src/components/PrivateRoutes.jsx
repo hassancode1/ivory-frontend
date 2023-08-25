@@ -9,7 +9,7 @@ const PrivateRoutes = ({ children }) => {
     const auth = !!(authState.isAuthenticated && accessToken)
     
 
-    return <>{auth ? children :null  }</>
+    return <>{auth ? children : null }</>
 };
 
 export default PrivateRoutes

@@ -17,7 +17,7 @@ const Withdraw = ({withdrawModal, wallet,handleWithdrawcancel , handleWithdraw ,
     open={withdrawModal}
     onOk={handleWithdraw}
     onCancel={handleWithdrawcancel}
-    okText="Deposit" 
+    okText="Withdraw" 
     okButtonProps={{
         style: {
           backgroundColor: '#1890ff',

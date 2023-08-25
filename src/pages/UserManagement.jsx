@@ -32,12 +32,11 @@ import useGetAllUsers from "../hooks/useGetAllUsers";
   function UserManagement() {
     const {toggleuser} = toggleUser()
     const {createInvite}= useInvite()
-    const {users, fetchUsers} = useGetAllUsers()
+    const {users, refetch } = useGetAllUsers()
     const [useremail, setUseremail]= useState("")
     const [invite, setInvite] = useState(false);
-    useEffect(() =>{
-    fetchUsers()
-    },[toggleuser])
+  console.log(users)
+  
    const activeUsers = users?.filter((user) => user.firstName !== undefined && user.firstName !== '');
  
   const pendingInvite = users?.filter((user) => !user.isActive && user.firstName === '' )
@@ -66,7 +65,7 @@ const data={
   isActive:!user.isActive
 }
 toggleuser(data)
-fetchUsers()
+refetch()
 }
  
     const columns = [

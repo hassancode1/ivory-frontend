@@ -7,6 +7,7 @@ import {
   import { Card, Space, Statistic, Table, Typography } from "antd";
   import { useEffect, useState } from "react";
   import useGetAllUsers from "../hooks/useGetAllUsers";
+
   import { useLocation } from "react-router-dom";
   
   import {
@@ -36,11 +37,14 @@ import {
 
   
 const {users} = useGetAllUsers()
-const activeUsers = users?.filter((user) => user.isActive)
-const inActive = users?.filter((user) => !user.isActive)
+const activeUsers = users?.data?.filter((user) => user.isActive)
+const inActive = users?.data?.filter((user) => !user.isActive)
 
     return ( 
+   
+   
     <div className=" flex justify-center items-center ">
+   
       <Space size={20} direction="vertical">
        
         <Typography.Title level={4}>Dashboard</Typography.Title>
@@ -103,6 +107,7 @@ const inActive = users?.filter((user) => !user.isActive)
         </Space>
       </Space>
       </div>
+ 
     );
   }
   

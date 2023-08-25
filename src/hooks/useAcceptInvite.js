@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate, useLocation } from "react-router-dom";
-
+import { API_URL } from "../utils/constants";
 
 function useAcceptInvite() {
     const navigate= useNavigate()
@@ -11,7 +11,7 @@ function useAcceptInvite() {
     const id = new URLSearchParams(location.search).get('id');
     const email = new URLSearchParams(location.search).get('email');
 
-  const url = `https://whale-app-a3hvg.ondigitalocean.app/ivory2/accept/invite?id=${id}&email=${email}`
+  const url = `${API_URL}/accept/invite?id=${id}&email=${email}`
 
   const [loading, setLoading] = useState(true);
 

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { getLocalAccessToken } from "../utils/constants";
 import getWallet from "./getWallet";
-
+import { API_URL } from "../utils/constants";
 function useWalletWithdraw() {
-  const url = "https://whale-app-a3hvg.ondigitalocean.app/ivory2/wallet/withdraw";
+  const url = `${API_URL}/wallet/withdraw`
 
   const accessToken = getLocalAccessToken();
   const [loading, setLoading] = useState(true);

@@ -1,36 +1,41 @@
 import React, { useEffect, useState } from "react";
+import { API_URL } from "../utils/constants";
+import axios from "axios";
 
 
-function useGetAllUsers() {
-  const url = 'https://whale-app-a3hvg.ondigitalocean.app/ivory2/users'
+const useGetAllUsers = () => {
+  const url = `${API_URL}/users`;
+  const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const [users, setUsers] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  async function fetchUsers() {
-    try {
-      setLoading(true);
-      const response = await fetch(url, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-         
-        },
-      });
-      const data = await response.json();
-      setUsers(data);
-    } catch (error) {
-  
-    } finally {
-      setLoading(false);
-    }
-  }
+  const [fetch, setFetch] = useState(0);
+  const refetch = () => setFetch((prev) => prev + 1);
 
   useEffect(() => {
-    fetchUsers();
-  }, []);
+    const fetchData = async () => {
+      setIsLoading(true);
+      setError(null);
+      try {
+        const response = await axios.get(`${url}`);
+        setUsers(response?.data);
+     
+        if (!response.ok) {
+          throw new Error("An error occurred while fetching the data.");
+        }
 
-  return { users, loading ,fetchUsers};
-}
+        return response.data.data;
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-export default useGetAllUsers;
+    fetchData();
+  }, [url, fetch]);
+
+  return { users, isLoading, error, refetch };
+};
+
+export default useGetAllUsers

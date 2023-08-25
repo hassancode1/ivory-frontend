@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-
+import { API_URL } from "../utils/constants";
 
 function useInvite() {
-  const url = 'https://whale-app-a3hvg.ondigitalocean.app/ivory2/invite'
+  const url = `${API_URL}/invite`
 
   const [loading, setLoading] = useState(true);
 

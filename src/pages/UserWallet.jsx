@@ -36,8 +36,15 @@ const [enterWithdraw, setEnterWithdraw] = useState("")
   const [depositModal, setDepositModal] = useState(false);
   const [withdrawModal, setWithdrawModal] = useState(false)
   const [transferModal, setTransferModal] = useState(false)
-  console.log(withdrawModal)
+
   const {wallet , fetchWallet} = getWallet()
+  
+  const [isCopied, setIsCopied] = useState(false);
+  const handleCopy = () => {
+    navigator.clipboard.writeText(wallet?.wallet.id).then(() => {
+      setIsCopied(true);
+    });
+  };
   useEffect(() => {
     fetchWallet();
   }, [enterAmount, enterTransfer, enterWithdraw]);
@@ -134,7 +141,16 @@ const [enterWithdraw, setEnterWithdraw] = useState("")
       <h2 className="mb-4 text-2xl font-bold">User Wallet</h2>
       <div className="bg-white px-8 py-8 w-full">
         <h2>main balance</h2>
+        <div className="flex justify-between ">
         <h3 className="text-2xl font-bold mt-4">{dollarFormatter(wallet?.wallet.amount)}</h3>
+        <div className="flex flex-col">
+        <h3> Account number</h3>
+        <div className="flex justify-between gap-5">
+        <h3 className="font-bold text-2xl"> {wallet?.wallet.id}</h3>
+        <div className="bg-slate-500 text-white  py-2 px-2 rounded-md cursor-pointer"  onClick={() =>handleCopy()}>{isCopied ? 'Copied!' : 'Copy'}  <CopyOutlined/></div>
+        </div>
+        </div>
+        </div>
         <div className="flex flex-row justify-between w-35rem mt-4 ">
           <div>
             <div className=

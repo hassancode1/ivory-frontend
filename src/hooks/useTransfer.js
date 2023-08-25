@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { getLocalAccessToken } from "../utils/constants";
 import getWallet from "./getWallet";
-
+import { API_URL } from "../utils/constants";
 function useTransfer() {
-  const url = "https://whale-app-a3hvg.ondigitalocean.app/ivory2/wallet/transfer";
+  const url = `${API_URL}/wallet/transfer`
 
   const accessToken = getLocalAccessToken();
   const [loading, setLoading] = useState(true);

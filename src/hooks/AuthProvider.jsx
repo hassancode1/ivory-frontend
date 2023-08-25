@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import useCurrentUser from './useCurrentUser';
-
+import { API_URL } from '../utils/constants';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (postData) => {
-    const url = 'https://whale-app-a3hvg.ondigitalocean.app/ivory2/login';
+    const url = `${API_URL}/login`;
     try {
       setLoading(true); 
 
