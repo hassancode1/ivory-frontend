@@ -75,7 +75,7 @@ const Signup = () => {
   
   <div className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full bg-gray-100'>
 <div className=' flex flex-col justify-center w-11/12 sm:w-full mx-auto'>
-<div className='text-3xl  font-bold text-center py-6 absolute top-0 text-primaryColor left-10'>Biz Converse</div>
+<div className='text-3xl  font-bold text-center py-6 absolute top-0 text-primaryColor left-10'>Ivory pay</div>
   <form className='max-w-[400px] w-full mx-auto bg-white p-4  mt-16' >
     <h2 className='text-2xl  font-bold text-center py-6'>Accept Invite</h2>
     <div className='flex flex-col py-2'>

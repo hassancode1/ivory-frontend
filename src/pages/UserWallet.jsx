@@ -184,8 +184,7 @@ const [enterWithdraw, setEnterWithdraw] = useState("")
         </div>
       
       </div>
-      <h2 className="mt-8 text-1xl mb-4 ">Transaction history</h2>
-      <Table columns={columns} dataSource={data} style={{width:"950px"}}/>;
+     
     </div>
       
  <Deposit  

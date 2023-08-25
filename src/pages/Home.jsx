@@ -96,26 +96,10 @@ const inActive = users?.filter((user) => !user.isActive)
             value={inActive?.length}
           />
       
-          <DashboardCard
-            className="w-64 h-40"
-            icon={
-              <DollarCircleOutlined
-                style={{
-                  color: "red",
-                  backgroundColor: "rgba(255,0,0,0.25)",
-                  borderRadius: 20,
-                  fontSize: 24,
-                  padding: 8,
-                }}
-              />
-            }
-            title={"Revenue"}
-            value={0}
-          />
+      
         </Space>
         <Space>
-          {/* <RecentOrders /> */}
-          <DashboardChart />
+       
         </Space>
       </Space>
       </div>
@@ -141,23 +125,12 @@ const inActive = users?.filter((user) => !user.isActive)
   
    
   
-    const options = {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: "bottom",
-        },
-        title: {
-          display: true,
-          text: "List of All transactions",
-        },
-      },
-    };
+   
   
     return (
         <div className="">
       <Card style={{ width: 500, height: 250 }}>
-        <Bar options={options} data={reveneuData} />
+      
       </Card>
       </div>
     );

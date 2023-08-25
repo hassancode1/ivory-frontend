@@ -65,7 +65,7 @@ const Login = () => {
   return (
   <>
   <div className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full bg-gray-100'>
-  <div className='text-3xl  font-bold text-center py-6 absolute top-0 text-primaryColor left-10 sm:text-white'>Biz Converse</div>
+  <div className='text-3xl  font-bold text-center py-6 absolute top-0 text-primaryColor left-10 sm:text-white'>Ivory pay</div>
 <div className='hidden sm:block'>
 <img  src={Loginimg} className='w-full h-full object-cover' alt='login image'/>
 </div>

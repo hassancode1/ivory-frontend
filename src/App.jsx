@@ -28,12 +28,12 @@ function App() {
         </Routes>
         
        (
-        <PrivateRoutes>
+       
           <div className="SideMenuAndPageContent">
-            <SideMenu></SideMenu>
+          <PrivateRoutes> <SideMenu></SideMenu>  </PrivateRoutes>
             <PageContent></PageContent>
           </div>
-          </PrivateRoutes>
+         
         )
           <ToastContainer />
        
